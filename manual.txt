@@ -27,3 +27,19 @@ C:\Users\82109>git config --global user.email tncks097@naver.com
 C:\git_folder>git clone https://github.com/Kimsc9976/LAB_sushi.git
 
 우리가 설정한 폴더는 로컬 리포지터리, 깃허브는 리모트 리포지터리가 된다.
+
+이 파일을 한번 깃에 업로드 해보겟다.
+이 파일은 로컬 리포지터리에 있고 이를 업로드 하기위해서는
+C:\git_folder\LAB_sushi>git add manual.txt
+를 하여 깃허브에에 업로드를 하고
+
+따로 코멘트로
+C:\git_folder\LAB_sushi>git commit -m "Add Text File [manual.txt]"
+를 적어주면 
+[master (root-commit) 7d5c111] Add Text File [manual.txt]
+ 1 file changed, 29 insertions(+)
+ create mode 100644 manual.txt
+메시지와 함꼐 "Add Text File [manual.txt]" 의 코멘트가 달린다.
+
+C:\git_folder\LAB_sushi>git push
+마지막으로 이 명령어를 넣으면 업로드가 완료된다.
