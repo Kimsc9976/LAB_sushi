@@ -33,6 +33,7 @@ C:\git_folder>git clone https://github.com/Kimsc9976/LAB_sushi.git
 C:\git_folder\LAB_sushi>git add manual.txt
 를 하여 깃허브에에 업로드를 하고
 
+이것을 선언하는 이유와 확인 방법
 따로 코멘트로
 C:\git_folder\LAB_sushi>git commit -m "Add Text File [manual.txt]"
 를 적어주면 
