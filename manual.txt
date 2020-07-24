@@ -15,7 +15,7 @@ r깃허브를 이용하려면 깃에 대하여도 알아야한다
 깃을 설치하면 cmd에서 git명령어를 이용할 수 있다.
 
 C:\Users\82109>git
-을 치면 git 명령어 이용법이 나온다.
+을 치면 git 명령어 이용법이 나.
 
 C:\Users\82109>git config --global user.name ksc9976
 
@@ -33,7 +33,7 @@ C:\git_folder>git clone https://github.com/Kimsc9976/LAB_sushi.git
 C:\git_folder\LAB_sushi>git add manual.txt
 를 하여 깃허브에에 업로드를 하고
 
-이것을 선언하는 이유와 확인 방법
+이것을 선언하는 이유와 확인 방법efe
 따로 코멘트로
 C:\git_folder\LAB_sushi>git commit -m "Add Text File [manual.txt]"
 를 적어주면 
@@ -44,3 +44,8 @@ C:\git_folder\LAB_sushi>git commit -m "Add Text File [manual.txt]"
 
 C:\git_folder\LAB_sushi>git push
 마지막으로 이 명령어를 넣으면 업로드가 완료된다.
+
+
+텍스트 수정해서 commit을 남길 수 있은ㄴ가
+텍스트 수정 후에 업로드를 해야지 가능한가
+웹상에서는 이 활동이 안되는가
