@@ -1,49 +1,23 @@
-r깃허브를 이용하려면 깃에 대하여도 알아야한다
-깃허브-커피숍, 깃-커피 정도의 느낌
-
-깃은 모든 변화된 내용을 추적할 수 있다는 장점이 있다,.
-또한 같은 파일에 대한 각기 다른 버전을 보관할 수 있다는 것 역시 장점이다.
-해당 변경사항을 모든 각기 다른 파일에 바로 적용할 수 있게 해준다.
-
-또 같은 파일을 다 같이 이용 가능, 서로의 변경사항과 충돌하는 일 없이 일이 가능므로,
-공유 가능하며 틀린것도 피드백이 가능
-
-많은 오픈소스 코드들이 존재한다.
-
-깃허브를 이용하려면 일단 깃을 설치한다.
-
-깃을 설치하면 cmd에서 git명령어를 이용할 수 있다.
-
-C:\Users\82109>git
-을 치면 git 명령어 이용법이 나.
-
-C:\Users\82109>git config --global user.name ksc9976
-
-C:\Users\82109>git config --global user.email tncks097@naver.com
-로 github를 글로벌환경에서 이용할 수 있도록 설정(name= 유저아이디, email.유저 이메일)
-
-
 폴더를 만든 후 깃 프로젝트를 설정하면, 
 C:\git_folder>git clone https://github.com/Kimsc9976/LAB_sushi.git
 
 우리가 설정한 폴더는 로컬 리포지터리, 깃허브는 리모트 리포지터리가 된다.
 
-이 파일을 한번 깃에 업로드 해보겟다.
-이 파일은 로컬 리포지터리에 있고 이를 업로드 하기위해서는
-C:\git_folder\LAB_sushi>git add manual.txt
-를 하여 깃허브에에 업로드를 하고
+working directory => manual1.txt
 
-이것을 선언하는 이유와 확인 방법efe
-따로 코멘트로
-C:\git_folder\LAB_sushi>git commit -m "Add Text File [manual.txt]"
-를 적어주면 
-[master (root-commit) 7d5c111] Add Text File [manual.txt]
- 1 file changed, 29 insertions(+)
- create mode 100644 manual.txt
-메시지와 함꼐 "Add Text File [manual.txt]" 의 코멘트가 달린다.
+git add 로 .git에 저장(찾아보는데 모르겠다..)
 
-C:\git_folder\LAB_sushi>git push
-마지막으로 이 명령어를 넣으면 업로드가 완료된다.
+git commit으로 Local Repository(git_folder)에 저장
+이때 commit 뒤의 용어로 코멘트 등을 작성 할 수 있음
+
+git push 를 하면 Remote Repository(git_hun)에 저장
+
+git fetch로 Local Repository에 저장
+git merge로 Working Directory 실행
+이 동시에 동일한 파일을 수정 했기 떄문에 발생하는 충돌을 막고 Local 과 Remote를 동기화 시킨다.
+
+위 두가지 방법은 git pull로 동시 실행 가능
+
 
 
 텍스트 수정해서 commit을 남길 수 있은ㄴ가
@@ -52,5 +26,5 @@ C:\git_folder\LAB_sushi>git push
 깃 상에서도 코드를 적을 수 있다. 
 이것은 어떻게 사용해야 하는가
 파이썬에서 작성한 코드를 올리고 깃허브에다 코멘트 달기까지
--웹상에서 바로 수정이 가능한지 
+-웹상에서 바로 수정이 가능한지 d
 
