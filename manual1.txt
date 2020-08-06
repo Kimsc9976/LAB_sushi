@@ -5,25 +5,63 @@ C:\git_folder>git clone https://github.com/Kimsc9976/LAB_sushi.git
 
 working directory => manual1.txt
 
-git add 로 .git에 저장(찾아보는데 모르겠다..)
+git add 로 .git(stage) 에 저장(찾아보는데 모르겠다..)
 
 git commit으로 Local Repository(git_folder)에 저장
 이때 commit 뒤의 용어로 코멘트 등을 작성 할 수 있음
 
-git push 를 하면 Remote Repository(git_hun)에 저장
+git push 를 하면 Remote Repository(git_hub)에 저장
 
 git fetch로 Local Repository에 저장
 git merge로 Working Directory 실행
-이 동시에 동일한 파일을 수정 했기 떄문에 발생하는 충돌을 막고 Local 과 Remote를 동기화 시킨다.
+이 동시에 동일한 파일을 수정 했기 떄문에 발생하는 충돌을 막고 Local 과 Remote를 동기화 시킨다. (BRanch에 대한 설명은 다음에)
 
 위 두가지 방법은 git pull로 동시 실행 가능
 
+수정할 자료는 code다운받는 걸 클릭해서  링크를 복사 후 깃 프로젝트 링크 를 받으면 됨
+git clone은 별도의 권한 없이 자료를 받는 것이기 때문에 받고 싶은 것을 git clone하면 된다.
+
+받아서 자료를 수정하고(특정한 File이 추가, 혹은 수정 된 것은 git status로 확인 가능) git add를 하면 
+(폴더 내 모든 파일을 올리고 싶다면 git add . 을 하면 다 올라간다.)
+
+stage(.git)에 올라간 것을 확인 할 수 있다.(이것 역시 git status로 확인 가능)
+이 자료를 올리기 싫다면 git reset을 사용하면 stage에서 내려온다(working space에서 수정후 저장한건 안돌아오는듯)
+
+수정후 저장한 것을 지우고 싶다면 git checkout -- (file명)을 하면 삭제된다.(git add 하기 전에 혹은 실수로 git add를 했다면, git reset을 한 이후에)
+
+또 git log (file명)을 해서 그 파일에 걸렸던 commit을 확인 가능하다.
+남겼던 commit을 지우거나, 그 commit을 불러오고 싶으면, git reset을 이용하면 되고
+git reset --hard (commit 해쉬)를 이용하면 선택한 commit 이후에 적은 모든 commit을 지운다는 명령어
+즉 그 이후 만든 것들은 다 지워버린다
+이 Local repository를 저장하고 싶으면 git push -f로 업뎃가능(그냥 git push는 local과 reomte의 구성이 달라졌기 때문에 push못한다고 한다)
+
+
+폴더 내 모든 파일을 올리고 싶다면 git add . 을 하면 다 올라간다.
+
+
+
+git pull을 하면 remote repository와 local repository를 동일하게 설정 가능
+
+
+commit 내용을 잘못 적었으면 git commit --amend를 이용해서 메시지 내용 수정 가능
 
 
 텍스트 수정해서 commit을 남길 수 있은ㄴ가
 텍스트 수정 후에 업로드를 해야지 가능한가
+
+commit 내용을 잘못 적었으면 git commit --amend를 이용해서 메시지 내용 수정 가능
+넘어간 cmd에서 a를 누르면 "노란색 부분"이 수정하는 부분이다. 수정 후에 esc를 누르고 :을 누른뒤 wq!를 쓰면 commit수정됨
+
+
+
+
+
+
+--soft 돌아간 이후의 내역을 모두 보관
+--mix는 섞는 느낌인데 안찾아봤다.
 웹상에서는 이 활동이 안되는가
 깃 상에서도 코드를 적을 수 있다. 
+
 이것은 어떻게 사용해야 하는가
 파이썬에서 작성한 코드를 올리고 깃허브에다 코멘트 달기까지
 -웹상에서 바로 수정이 가능한지 d
