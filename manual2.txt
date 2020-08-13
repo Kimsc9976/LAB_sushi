@@ -1,0 +1,93 @@
+git clone을 이용해 배포를할때 문제가 있으면 안됨 
+
+따라서 배포용(master) 외에 
+에러를 수정할 때 이용할 파일과 프로그렘에 추가하면 괜찮을 것 같은 것들을 따로 master branch외에 다른 곳에 넣어다 이용
+
+git branch 로 어떤 branch가 있는지 확인 할 수 있고,
+ git branch "branch명"으로 branch를 생성 할 수 있다.
+
+
+#################################################
+C:\git_folder\LAB_sushi\study-folder>git pull
+From https://github.com/Kimsc9976/study-folder
+ * [new branch]      Bug-Fix-Branch -> origin/Bug-Fix-Branch
+ * [new branch]      Develop-Brench -> origin/Develop-Brench
+Already up to date.
+
+C:\git_folder\LAB_sushi\study-folder>git brench
+git: 'brench' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+C:\git_folder\LAB_sushi\study-folder>git branch
+* master
+
+C:\git_folder\LAB_sushi\study-folder>git branch develop00
+
+C:\git_folder\LAB_sushi\study-folder>git branch
+  develop00
+* master
+
+깃 허브(remote) 내에서 Branch를 만들었는데 git branch 에 나오지 않는다. Local에는 존재하지 않는 branch기 떄문
+이러한 branch는 git push origin :"branch" 로 지워지더라-- 왜 지워지는지는 모르겠다..
+###################################################################3
+
+git checkout "Branch명"으로 해당 branch를 고를 수 있고
+고른 상태에서 git add 와 git commit을 수행하면
+
+git log를 통해 master가 아닌 develop에 추가됨을 알 수 있다.
+
+다른 브랜치가 있는 것에 master로 옮기고 싶다면,
+git merged "branch"를 통해 branch 에 있는 것을 master에 옮길 수 있다.
+
+다 쓴 branch는 git branch -d "branch"로 지우면 된다
+
+
+####################
+develop에 있는 자료를 github에 올리고 싶으면 
+C:\git_folder\LAB_sushi\study-folder>git push
+fatal: The current branch develop00 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin develop00
+#################
+보이는바와 같이 위의 작업을 하면 된다.
+
+만약 이렇게 작업을 햇는데
+
+master가 바뀌어서
+
+develop00에 있는 파일과 master에 있는 파일이 충돌이 일어나게 된다면 log를 보면 devlop과 master를 같이 수정햇는데
+master branch에서는 master에서 수정한 것만 보이고
+develop00에서는 develop00에서 수정한 것만 보인다
+
+서로 같지 않기 때문에...
+
+이럴 땐, 어디서 병합하든 상관 없지만 일반적으로 master에서 병합을 시작하고
+
+git merger "branch"를 하면 에러가 뜸 
+
+다시 그 파일을 들어가면 다른 부분을 명시해 준다.
+def add(a, b) :
+<<<<<<< HEAD
+    return a+b # 1+2=3
+
+def mul(a, b) :
+    return a*b
+=======
+    return a+b #hello
+>>>>>>> develop00 
+
+서로다른 코드는 수동으로 설정 하면 된다.
+
+수동으로 원하는 코드를 남기고 merge하면 됨
+
+그리고 branch는 필요 없으니 삭제
+*혹시 충돌이 한번 더 일어나면 다시 확인해 보고(보통 띄워쓰기나 들여쓰기로 인해 에러 발생하더라)
+다시한번 더 해보고 그래도 충돌 발생하면
+git branch -D를 이용하면 됨
+
+
+
+
